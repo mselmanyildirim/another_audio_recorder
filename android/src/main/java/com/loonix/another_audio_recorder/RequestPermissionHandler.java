@@ -44,7 +44,7 @@ public class RequestPermissionHandler implements PluginRegistry.RequestPermissio
     }
 
     private boolean hasRecordPermission(){
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.33) {
             // WRITE_EXTERNAL_STORAGE permission after API level 33 causes error:
             return (ContextCompat.checkSelfPermission(activity, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED);
         } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
