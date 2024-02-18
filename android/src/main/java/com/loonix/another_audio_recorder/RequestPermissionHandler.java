@@ -70,7 +70,7 @@ public class RequestPermissionHandler implements PluginRegistry.RequestPermissio
         } else {
             Log.d(TAG, "handleHasPermission false");
 
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.TIRAMISU) {
+            if (android.os.Build.VERSION.SDK_INT >= 33) {
 				ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.RECORD_AUDIO}, PERMISSIONS_REQUEST_RECORD_AUDIO);
 			} else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                 ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.RECORD_AUDIO, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_RECORD_AUDIO);
